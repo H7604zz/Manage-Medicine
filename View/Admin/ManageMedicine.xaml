@@ -1,0 +1,120 @@
+﻿<Page x:Class="ProjectPrn.View.Admin.ManageMedicine"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectPrn.View.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ManageMedicine">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="txtSearch" Width="200" Margin="0,0,10,0"/>
+                <Button x:Name="btnSearch" Width="100" Click="btnSearch_Click">Search</Button>
+            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Filter:</Label>
+                <ComboBox Grid.Column="1" x:Name="cbxType" SelectionChanged="cbxType_SelectionChanged" Margin="0,0,10,0"></ComboBox>
+            </Grid>
+
+            <DataGrid  x:Name="dgvDisplay" Margin="10"
+               AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Decription" Binding="{Binding Decription}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Min age" Binding="{Binding MinAge}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Type}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Quantity" Binding="{Binding Quantity}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Expired Date" Binding="{Binding ExpiredDate}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="20">
+                <Button Content="Previous" Click="btnPrevious_Click" />
+                <ComboBox x:Name="lstPageNumbers" SelectionChanged="lstPageNumbers_SelectionChanged" Width="40" Margin="10,0" HorizontalAlignment="Center"/>
+                <Button Content="Next" Click="btnNext_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="0,10,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Name" Width="80"/>
+                <TextBox x:Name="txtName" Width="150"
+                 Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.Name, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Decription" Width="80"/>
+                <TextBox x:Name="txtDecription" Width="150"
+                Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.Decription, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Min age" Width="80"/>
+                <TextBox x:Name="txtAge" Width="150"
+                Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.MinAge, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Quantity" Width="80"/>
+                <TextBox x:Name="txtQuantity" Width="150"
+                Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.Quantity, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Price" Width="80"/>
+                <TextBox x:Name="txtPrice" Width="150"
+                Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.Price, Mode=OneWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Expired date" Width="80"/>
+                <DatePicker x:Name="dpkDate" Width="150"
+                            Text="{Binding ElementName=dgvDisplay, Path=SelectedItem.ExpiredDate, Mode=OneWay}"></DatePicker>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Status" Width="80"/>
+                <ComboBox x:Name="cbxStatus" Width="150" SelectedValuePath="Tag" 
+                          SelectedValue="{Binding ElementName=dgvDisplay, Path=SelectedItem.Status, Mode=OneWay}">
+                    <ComboBoxItem Content="Active" Tag="1"/>
+                    <ComboBoxItem Content="Pause" Tag="2"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Type" Width="80"/>
+                <ComboBox x:Name="cbxTypeMedicine" Width="150"
+                          DisplayMemberPath="Type" SelectedValuePath="Type" SelectedValue="{Binding ElementName=dgvDisplay, Path=SelectedItem.Type, Mode=OneWay}"></ComboBox>
+            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" x:Name="btnInsert" Height="30" Width="60" Margin="10" Click="btnInsert_Click" >Add</Button>
+                <Button Grid.Column="1" x:Name="btnUpdate" Height="30" Width="60" Margin="14,10,0,10" Click="btnUpdate_Click" HorizontalAlignment="Left" >Update</Button>
+                <Button Grid.Column="2" x:Name="btnDelete" Height="30" Width="60" Margin="10" Click="btnDelete_Click" >Delete</Button>
+            </Grid>
+
+            <Button x:Name="btnNewType" Margin="20, 10, 20, 10" Click="btnNewType_Click">Add new type medicine</Button>
+        </StackPanel>
+    </Grid>
+</Page>

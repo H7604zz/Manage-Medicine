@@ -1,0 +1,23 @@
+﻿<Window x:Class="ProjectPrn.View.Customer.PurchaseOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPrn.View.Customer"
+        mc:Ignorable="d"
+        Title="PurchaseOrder" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgvOrderHistory" AutoGenerateColumns="False" 
+                  IsReadOnly="True" CanUserAddRows="False" Margin="10"
+                  VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Order" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, StringFormat=C2}" Width="*"/>
+                <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat=MM/dd/yyyy}" Width="*"/>
+                <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate, StringFormat=MM/dd/yyyy}" Width="*"/>
+                <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethod}" Width="*"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

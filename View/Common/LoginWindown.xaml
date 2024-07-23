@@ -1,0 +1,55 @@
+﻿<Window x:Class="ProjectPrn.View.Common.LoginWindown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPrn.View.Common"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <Grid Background="Cornsilk">
+            <Border BorderBrush="Black" BorderThickness="1" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Width="320" Background="Aqua">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Width="100">Email</Label>
+                            <TextBox x:Name="txtEmail" Width="200"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Width="100">Password</Label>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <PasswordBox x:Name="txtPassword" Width="200" Visibility="Visible" Grid.Column="0"/>
+                                <TextBox x:Name="txtPasswordVisible" Width="200" Visibility="Hidden" Grid.Column="0"/>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                            <CheckBox x:Name="chkShowPassword" Content="Show Password" Checked="chkShowPassword_Checked" Unchecked="chkShowPassword_Unchecked"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="ForgetPw" Grid.Row="1" Width="100" Height="20" HorizontalAlignment="Right" Margin="10,5,10,5" Click="ForgetPw_Click">Forgot Password</Button>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="Login"  Grid.Column="0" Width="100" Margin="0,10,10,10" HorizontalAlignment="Right" Click="Login_Click" >Login</Button>
+                        <Button x:Name="Register" Grid.Column="1" Width="100" Margin="10,10,10,10" HorizontalAlignment="Left" Click="Register_Click" >Register</Button>
+                    </Grid>
+                    
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

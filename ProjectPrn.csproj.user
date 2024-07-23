@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Admin\AdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\CreateAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\ManageAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\ManageMedicine.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\NewTypeMedicine.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\Report.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\UpdateAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\ViewOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Common\ConfirmCode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Common\ForgotPassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Common\LoginWindown.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Common\RegisterAcc.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Customer\CustomerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Customer\InputQuantityMedicine.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Customer\PurchaseOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Customer\ViewOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Customer\ViewProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Sale\ApproveOrders.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Sale\OrderDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Sale\SallerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\CreateAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\ManageAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\ManageMedicine.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\NewTypeMedicine.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\Report.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\UpdateAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\ViewOrder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Common\ConfirmCode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Common\ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Common\LoginWindown.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Common\RegisterAcc.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Customer\CustomerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Customer\InputQuantityMedicine.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Customer\PurchaseOrder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Customer\ViewOrder.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Customer\ViewProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Sale\ApproveOrders.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Sale\OrderDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Sale\SallerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

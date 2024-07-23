@@ -1,0 +1,45 @@
+﻿<Page x:Class="ProjectPrn.View.Admin.ViewOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPrn.View.Admin"
+        mc:Ignorable="d"
+        Title="ViewOrder" Height="450" Width="800">
+    <Grid Background="White" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" HorizontalAlignment="Right" Margin="10">
+            <Button x:Name="btnReport" Width="100" Click="btnReport_Click">Report</Button>
+        </DockPanel>
+        
+        
+        <Grid  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Margin="10,0,0,0">Status:</Label>
+            <ComboBox Grid.Column="1" x:Name="cbxStatus" Margin="0,0,10,0"
+                      SelectionChanged="cbxStatus_SelectionChanged"></ComboBox>
+        </Grid>
+
+
+        <DataGrid Grid.Row="2" x:Name="dgvDisplay" AutoGenerateColumns="False" 
+          IsReadOnly="True" CanUserAddRows="False" Margin="10" 
+          VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Order" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, StringFormat=C2}" Width="*"/>
+                <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate, StringFormat=MM/dd/yyyy}" Width="*"/>
+                <DataGridTextColumn Header="Payment Method" Binding="{Binding PaymentMethodName}" Width="*"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding StatusName}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
